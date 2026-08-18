@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DISTRO AVENUE — The Digital Avenue
+
+**Codename PROJECT-AVENUE · v1.0.0 · BUILD-READY**
+
+An **unofficial portfolio concept** that reimagines **Distro Avenue Store** (Jl. Pakuan,
+Baranangsiang, Bogor) as a premium digital streetwear destination. Built from the
+master PRD (`PRD.md`). Not affiliated with, approved by, or endorsed by Distro Avenue
+Store.
+
+> **PORTFOLIO DEMO** — all products, prices, orders, customers, analytics and journal
+> content are synthetic demo data, clearly labeled throughout the UI.
+
+---
+
+## Tech Stack
+
+- **Next.js 16** (App Router) · **React 19** · **TypeScript**
+- **Tailwind CSS v4** · **Framer Motion** · **Lucide React** · **Zustand**
+- Mock JSON data behind a backend-ready abstraction
+- Unit tests with **Vitest**
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # development server
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> Note: the build scripts force `NODE_ENV` via `cross-env` so they work regardless of
+> your shell environment.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Script              | Purpose                              |
+| ------------------- | ------------------------------------ |
+| `npm run dev`       | Development server                   |
+| `npm run build`     | Production build (all routes static) |
+| `npm run start`     | Serve the production build           |
+| `npm run lint`      | ESLint                               |
+| `npm run typecheck` | TypeScript check                     |
+| `npm test`          | Vitest unit tests                    |
 
-## Learn More
+## Routes
 
-To learn more about Next.js, take a look at the following resources:
+| Route              | Page                                   |
+| ------------------ | -------------------------------------- |
+| `/`                | Homepage (hero, avenue, city, drops)   |
+| `/shop`            | Catalog with filters & sort            |
+| `/product/[slug]`  | Product detail                         |
+| `/collections`     | Collection directory                   |
+| `/lookbook`        | Editorial looks + Shop the Look        |
+| `/journal`         | Editorial articles                     |
+| `/journal/[slug]`  | Article detail                         |
+| `/store`           | Store info, hours, dynamic status, map |
+| `/about`           | Concept story                          |
+| `/case-study`      | Portfolio case study                   |
+| `/bag`             | Shopping bag                           |
+| `/checkout`        | 3-step demo checkout                   |
+| `/account`         | Profile, orders, wishlist, addresses   |
+| `/admin`           | Portfolio demo CMS (10 modules)        |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Demo Mode
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`NEXT_PUBLIC_DEMO_MODE=true` in `.env.local`. When active, demo products, orders,
+customers, analytics and content are shown with `DEMO DATA` indicators. The admin
+dashboard always shows: *"All analytics shown are simulated portfolio data."*
 
-## Deploy on Vercel
+## Business Information
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Only **verified public information** is used for the store (address `9RX7+2C7, Jl.
+Pakuan, Baranangsiang, Bogor Timur` and operating hours). No phone numbers, emails,
+social accounts, prices or testimonials are fabricated.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Verification
+
+- ✅ Lint (0 errors) · ✅ Typecheck · ✅ 29/29 unit tests · ✅ Production build (44 routes)
+- ✅ All routes return 200 · ✅ 404 page · ✅ No console errors in browser QA
